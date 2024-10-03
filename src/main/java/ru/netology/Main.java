@@ -1,11 +1,14 @@
 package ru.netology;
+
 import ru.netology.Basket.Basket;
 import ru.netology.Client.ClientBronze;
 import ru.netology.Client.ClientGoldStatus;
 import ru.netology.Client.ClientSilverStatus;
 import ru.netology.PriceListOfGoods.PriceList;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+
 // Нету магических чисел везде использованы переменные или логические выражения main 41, ClientSilverStatus 12.
 public class Main {
     public static void main(String[] args) {
@@ -17,8 +20,8 @@ public class Main {
         HashMap<String, Integer> goods = new HashMap<>();
         goods.putAll(goodsCreate());
 // Здесь создание списка доступных продуктов вынесено отдельно, что бы не засорять меин созданием классов,
-        //создание отдельного метода для часто повторяющегося когда
-        // чтобы можно было создать список разными способами, например загрузить файл json.
+// создание отдельного метода для часто повторяющегося когда
+// чтобы можно было создать список разными способами, например загрузить файл json.
 
         Basket basket = new Basket(goods);
         basket.put("Milk", 1);
@@ -32,6 +35,7 @@ public class Main {
         client3.byOnCredit(basket.totalCost());
 
     }
+
     public static HashMap<String, Integer> goodsCreate() {
         PriceList Milk = new PriceList("Milk", 100);
         PriceList Ags = new PriceList("Ags", 115);

@@ -1,7 +1,7 @@
 package ru.netology.Basket;
 
 import java.util.HashMap;
-import java.util.Map;
+
 public class Basket {
 
     protected HashMap<String, Integer> goods;
